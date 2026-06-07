@@ -501,6 +501,15 @@ jobs:
             #echo "CONFIG_NF_TABLES=y" >> ./arch/arm64/configs/gki_defconfig
             # 开启 NTSync
             echo "CONFIG_NTSYNC=y" >> ./arch/arm64/configs/gki_defconfig
+            # 开启 kexec
+            echo "CONFIG_KEXEC=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_KEXEC_FILE=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_KEXEC_JUMP=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_CRASH_DUMP=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_CRASH_HOTPLUG=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_PROC_VMCORE=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_PROC_VMCORE_DEVICE_DUMP=y" >> ./arch/arm64/configs/gki_defconfig
+            echo "CONFIG_PROC_KCORE=y" >> ./arch/arm64/configs/gki_defconfig
             if [[ "${{ github.event.inputs.droidspaces_enable }}" == "extend" ]]; then
               echo "正在启用容器环境扩展支持..."
               # 开启虚拟 HCI 设备支持
